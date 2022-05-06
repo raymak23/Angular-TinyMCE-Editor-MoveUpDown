@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-container {
+  border: 2px dashed;
+  margin: 5px;
+}
+
+.moveupdown {
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,22 @@
+<div class="container">
+  <div *ngFor="let item of data; let i = index" class="editor-container">
+    <div class="moveupdown">
+      <div class="spacer"></div>
+      <button (click)="moveUp(i)" mat-icon-button>
+        <mat-icon>north</mat-icon>
+      </button>
+      <button (click)="moveDown(i)" mat-icon-button>
+        <mat-icon>south</mat-icon>
+      </button>
+    </div>
+    <div *ngIf="item.type === 'editor'">
+      <editor
+        apiKey="5lww599msntlqghe2m9hfpi94ldsuy4eoh16n2oxilv8khxm"
+        [id]="item.id"
+        [init]="settings(item.id)"
+        [initialValue]="item.defaultValue"
+      ></editor>
+    </div>
+    <p *ngIf="item.type === 'block'">{{ item.defaultValue }}</p>
+  </div>
+</div>
